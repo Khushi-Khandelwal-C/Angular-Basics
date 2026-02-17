@@ -1,27 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-test',
-  imports: [CommonModule],
-  template: `<div> Hello world {{name}} {{2+6}}</div>
-  <div>{{name.length}}</div>
-  <h2>{{name.toUpperCase()}}</h2>
-  <h2>{{greet()}}</h2>
-  
-  <h1>Property Binding</h1>
-  <input type = "text" [value] = "name">
-
-  <input type = "text" value = "{{name}}">
-
-  <h1>Style Binding</h1>
-
-  <h2 [style.color] = "hasError? 'Orange':'Red'">Error yet? </h2>
-
-  <h2 [style.color] = "highlighted"> What up, style binding </h2>
-  <h2 [ngStyle] = "styles">using NgStyle can be done by importing commonModules </h2>
-
-  `, //this 2 curly brackets are used for interpolation
+  imports: [CommonModule,FormsModule],
+  templateUrl: './test.html', //this 2 curly brackets are used for interpolation
   styleUrl: './test.css',
 })
 export class Test {
@@ -34,5 +18,17 @@ export class Test {
     color : "Blue",
     fontStyle : "italic"
   }
+  // OnClick(){
+  //   console.log("Welcome");
+  // }
+
+  OnClick(event : any){
+    console.log(event)
+  }
+  logMsg(msg : string){
+    console.log(msg);
+  }
+  public name2 = ""
+  public greeting = "previosly";
   public name = "Queen"; //variables which we can inject in html,in interpolation we can also perform operations,string concatenation
 }

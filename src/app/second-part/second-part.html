@@ -1,0 +1,67 @@
+<h1>*ngIf</h1>
+<h2 *ngIf = "true">
+    The Value is currently true;
+</h2>
+<h2>ng -template </h2>
+<h2 *ngIf = "isLoggedIn; else elseBlock">
+    This one is invisible
+</h2>
+
+<ng-template #elseBlock>
+<h2>
+    helllooo mate,visible again
+</h2>
+</ng-template>
+
+<div *ngIf = "isLoggedIn ;then thenBlock; else elseBlock2"> </div>
+<ng-template #thenBlock>
+    <h2>Practicing the not in line ngif</h2>
+</ng-template>
+
+<ng-template #elseBlock2>
+    <h2>Practicing the not in line ngif,well this was else block</h2>
+</ng-template>
+
+<h1>*ngSwitch</h1>
+
+<div [ngSwitch] = "color">
+    <div *ngSwitchCase = "'red'">This Is red color text</div>
+    <div *ngSwitchCase = "'blue'">This Is blue color text</div>
+    <div *ngSwitchCase = "'green'">This Is green color text</div>
+    <div *ngSwitchDefault >Pick Again</div>
+
+</div>
+
+<h1>*ngFor</h1>
+<div *ngFor = "let i of fruits;index as ind;first as f;last as l">
+<h2> {{ind}} {{i}} {{f}} {{l}}</h2>
+</div>
+
+#first - returns true if it is the first element
+#last - returns true if it is the last element
+#even - returns true if it is the even element
+#odd - returns true if it is the odd element
+
+<h1>From parent to child component</h1>
+<div>
+    {{rootName}}
+</div>
+
+<h1> child to parent component transfer</h1>
+<button (click) = "eventLauncher()"> Send to Parent</button>
+
+<h1> Pipes</h1>
+ <h2>{{anotherStr | lowercase}}</h2>
+ <h2>{{str2 | uppercase}}</h2>
+ <h2>{{person | json}}</h2>
+ <h2>{{str3 | slice:8:23}}</h2>
+
+ <h2>{{5.678 | number : "1.2-3"}}</h2> #first num - num of int, second num - min number of decimal, third num - max number of decimal
+ <h2>{{5.678 | number : "2.3-4"}}</h2>
+ <h2>{{5.678 | number : "3.4-5"}}</h2>
+
+ <h2>{{0.25 | percent}}</h2>
+<h2>{{0.25 | currency : 'INR'}} </h2>
+
+<h2>{{date | date:'short'}}</h2>
+

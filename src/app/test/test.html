@@ -1,1 +1,33 @@
-<p>test works!</p>
+<div> Hello world {{name}} {{2+6}}</div>
+  <div>{{name.length}}</div>
+  <h2>{{name.toUpperCase()}}</h2>
+  <h2>{{greet()}}</h2>
+  
+  <h1>Property Binding</h1>
+  <input type = "text" [value] = "name">
+
+  <input type = "text" value = "{{name}}">
+
+  <h1>Style Binding</h1>
+
+  <h2 [style.color] = "hasError? 'Orange':'Red'">Error yet? </h2>
+
+  <h2 [style.color] = "highlighted"> What up, style binding </h2>
+  <h2 [ngStyle] = "styles">using NgStyle can be done by importing commonModules </h2>
+
+  <h1> Event Binding </h1>
+  
+  <button (click) = "OnClick($event)"> getting info about click </button>
+  <button (click) = "greeting = 'Welcome Homie'"> Greeet </button>
+
+
+
+  {{greeting}}
+
+  <h1>Template Reference variable</h1>
+  <input #myInput type = "text">
+  <button (click) = "logMsg(myInput.value)">Log</button>
+
+  <h1>Two way Binding</h1>
+  <input [(ngModel)] = "name2" type = "text">
+  {{name2}}

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Third } from '../third';
+import { ThirdService } from '../third-service';
 
 @Component({
   selector: 'app-third',
@@ -9,11 +9,11 @@ import { Third } from '../third';
   styleUrl: './third.css',
 })
 export class Third {
+  public employee :any;
+  // constructor(private thirdService : ThirdService) {
+  //    this.thirdService.getEmployees()
+  //   .subscribe(data => this.employee = data);
+  // }
   
-  public employee = [
-    {"id" : 1, "name" : "Khushi" , age : 90},
-    {"id" : 2, "name" : "Riya" , age :67},
-    {"id" : 3,"name" : "Sia" , age : 23},
-    {"id" : 4, "name" : "Ridha" , age : 56}
-  ]
+
 }

@@ -1,13 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+
 import { Test } from './test/test';
 import { CommonModule } from '@angular/common';
 import { SecondPart } from './second-part/second-part';
 import { Third } from './third/third';
+import { provideHttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,Third],
+  imports: [CommonModule,RouterOutlet,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
